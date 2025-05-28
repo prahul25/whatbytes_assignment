@@ -4,6 +4,7 @@ import { ShoppingCart, User, Sun, Moon } from "lucide-react";
 
 import { useEffect, useState } from "react";
 import { useThemeStore } from "./themeStore";
+import Link from "next/link";
 
 export default function Header({ onSearch }) {
   const { theme, toggleTheme } = useThemeStore()
@@ -46,7 +47,10 @@ export default function Header({ onSearch }) {
         <button onClick={toggleTheme} aria-label="Toggle theme">
           {theme === "light" ? <Moon /> : <Sun />}
         </button>
-        <ShoppingCart />
+
+        <Link href="/cart" aria-label="Cart">
+          <ShoppingCart className="cursor-pointer" />
+        </Link>
         <User />
       </div>
     </header>
