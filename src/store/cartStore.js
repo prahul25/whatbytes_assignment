@@ -52,6 +52,19 @@ export const useCartStore = create(
     );
   }
 },
+decrementFromCart: (id) => {
+  const item = get().cart.find((item) => item.id === id);
+  if (item && item.quantity > 1) {
+    set((state) => ({
+      cart: state.cart.map((p) =>
+        p.id === id ? { ...p, quantity: p.quantity - 1 } : p
+      ),
+    }));
+  } else {
+    // If quantity is 1, remove the product
+    get().removeFromCart(id);
+  }
+},
 
 
       removeFromCart: (id) => {
