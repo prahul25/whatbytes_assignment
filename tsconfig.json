@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/ThemeToggle.jsx", "src/components/ProductCard.jsx","src/components/ThemeProvider.jsx", "src/components/Footer.jsx", "src/components/Header.jsx","src/app/product/[id]/page.jsx", "src/components/themeStore.js", "src/store/themeStore.js", "src/store/cartStore.js"  ],
   "exclude": [
     "node_modules"
   ]

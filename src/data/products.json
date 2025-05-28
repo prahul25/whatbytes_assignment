@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Wireless Headphones",
+    "price": 1999,
+    "image": "https://img.freepik.com/premium-photo/isolated-sony-wh-1000xm5-wireless-headphones-front-view-featuring-white-background-clean_655090-801089.jpg",
+    "description": "High-quality noise cancelling headphones.",
+    "category": "electronics"
+  },
+  {
+    "id": "2",
+    "title": "Smart Watch",
+    "price": 2999,
+    "image": "https://www.bhphotovideo.com/images/images2500x2500/apple_mj3v2ll_a_watch_smartwatch_42mm_stainless_1146124.jpg",
+    "description": "Track your steps and health efficiently.",
+    "category": "wearables"
+  },
+  {
+    "id": "3",
+    "title": "Smartphone",
+    "price": 19999,
+    "image": "https://th.bing.com/th/id/OIF.0xVrs1TJZNistOKI4s48iA?rs=1&pid=ImgDetMain",
+    "description": "Gamify your life like mobile.",
+    "category": "electronics"
+  },
+  {
+    "id": "4",
+    "title": "Nike shoes",
+    "price": 29999,
+    "image": "https://th.bing.com/th/id/OIP.d1DOcBVm_9dFSO7AXOzTfAHaFE?rs=1&pid=ImgDetMain",
+    "description": "Keep up to date with stylish nike shoes.",
+    "category": "wearables"
+  },
+  {
+    "id": "5",
+    "title": "Thermo bottles",
+    "price": 799,
+    "image": "https://www.technotape.com/media/80/33/9a/1686662510/Stainless_Steel_Sublimation_Thermos_Bottle_500_ml_17oz_Matte_White_SDB.070.260.004.jpg?ts=1686662526",
+    "description": "Keep ypur self healthy by drinking water.",
+    "category": "electronics"
+  },
+  {
+    "id": "6",
+    "title": "Ear buds",
+    "price": 9999,
+    "image": "https://th.bing.com/th/id/OIP.nANzdNw56cgXKD0F5VtBUwHaHa?w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+    "description": "Escape from reality with music.",
+    "category": "wearables"
+  }
+]
