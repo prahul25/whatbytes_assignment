@@ -1,9 +1,10 @@
 import { Toaster } from "sonner";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { ThemeProvider } from "../components/ThemeProvider";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { CartProvider } from "@/app/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +17,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-white text-black dark:bg-gray-900 dark:text-white transition-colors`}>
+        <CartProvider>
         <ThemeProvider>
           <Toaster richColors />
           <main className="min-h-screen px-4 py-6">{children}</main>
   
         </ThemeProvider>
+        </CartProvider>
       </body>
     </html>
   );

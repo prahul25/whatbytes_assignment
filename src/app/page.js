@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "./components/ProductCard";
 import products from "../data/products.json";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,67 +27,47 @@ const [priceRange, setPriceRange] = useState(30000); // Set initial max price
       <Header onSearch={setSearchTerm} />
       <div className="flex px-6 py-4">
         {/* Sidebar Filters */}
-        <aside className="w-1/4 pr-4 hidden md:block">
-          <h3 className="text-lg font-semibold mb-2">Filters</h3>
-          <div className="space-y-2">
-            <label className="block">
-              <input
-                type="radio"
-                name="category"
-                value="All"
-                checked={selectedCategory === "All"}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="mr-2"
-              />
-              All
-            </label>
-            <label className="block">
-              <input
-                type="radio"
-                name="category"
-                value="Electronics"
-                checked={selectedCategory === "Electronics"}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="mr-2"
-              />
-              Electronics
-            </label>
-            <label className="block">
-              <input
-                type="radio"
-                name="category"
-                value="Wearables"
-                checked={selectedCategory === "Wearables"}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="mr-2"
-              />
-              Wearables
-            </label>
-            <label className="block">
-              <input
-                type="radio"
-                name="category"
-                value="Household"
-                checked={selectedCategory === "Household"}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="mr-2"
-              />
-              Household
-            </label>
-          </div>
-           <div className="mb-6">
-    <label className="block font-semibold mb-1">Price Range: ₹{priceRange}</label>
-    <input
-      type="range"
-      min="0"
-      max="30000"
-      step="100"
-      value={priceRange}
-      onChange={(e) => setPriceRange(Number(e.target.value))}
-      className="w-full accent-blue-600"
-    />
+       <aside className="w-1/4 pr-4 hidden md:block">
+  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border dark:border-gray-700">
+    <h3 className="text-xl font-bold mb-4">Filters</h3>
+
+    {/* Category Filter */}
+    <div className="mb-6">
+      <h4 className="text-md font-semibold mb-2 text-gray-700 dark:text-gray-300">Category</h4>
+      <div className="space-y-2">
+        {["All", "Electronics", "Wearables", "Household"].map((category) => (
+          <label key={category} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+            <input
+              type="radio"
+              name="category"
+              value={category}
+              checked={selectedCategory === category}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="mr-2 accent-blue-600"
+            />
+            {category}
+          </label>
+        ))}
+      </div>
+    </div>
+
+    {/* Price Filter */}
+    <div>
+      <h4 className="text-md font-semibold mb-2 text-gray-700 dark:text-gray-300">Price Range</h4>
+      <p className="text-sm mb-1 text-gray-500 dark:text-gray-400">Up to ₹{priceRange}</p>
+      <input
+        type="range"
+        min="0"
+        max="30000"
+        step="100"
+        value={priceRange}
+        onChange={(e) => setPriceRange(Number(e.target.value))}
+        className="w-full accent-blue-600"
+      />
+    </div>
   </div>
-        </aside>
+</aside>
+
 
         {/* Product Listing */}
         <main className="flex-1">

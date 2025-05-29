@@ -1,17 +1,18 @@
 "use client";
 
-import { useCartStore } from "../../store/cartStore";
+import { useCart } from "@/app/context/CartContext";
+import CartHeader from "../components/CartHeader";
 
 export default function CartPage() {
-  const cart = useCartStore((state) => state.cart);
-  const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const addToCart = useCartStore((state) => state.addToCart);
-  const decrementFromCart = useCartStore((state) => state.decrementFromCart);
-
+ const { cart, addToCart, removeFromCart, decrementFromCart } = useCart();
+console.log("Cart in CartPage:", cart); // ✅ place here
   const getTotal = () =>
     cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+console.log(cart,"CART")
   return (
+    <div>
+      <CartHeader/>
+    
     <div className="p-6 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">🛒 Your Cart</h1>
 
@@ -42,17 +43,28 @@ export default function CartPage() {
 
                   {/* Quantity Controls */}
                   <div className="mt-4 flex items-center gap-3">
-                  <button
-  onClick={() => decrementFromCart(item.id)}
-  className="px-3 py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded"
->
-  -
-</button>
+                    <button
+                      onClick={() => decrementFromCart(item.id)}
+                      className="px-3 py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded"
+                    >
+                      −
+                    </button>
 
 
                     <span className="text-md font-medium">{item.quantity}</span>
+
                     <button
-                      onClick={() => addToCart({ ...item, quantity: 1 })}
+                      onClick={() =>
+                        addToCart({
+                          id: item.id,
+                          title: item.title,
+                          price: item.price,
+                          image: item.image,
+                          category: item.category,
+                          description: item.description,
+                          quantity: 1, // ✅ always use a clean payload
+                        })
+                      }
                       className="px-3 py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded"
                     >
                       +
@@ -85,6 +97,7 @@ export default function CartPage() {
           </div>
         </>
       )}
+    </div>
     </div>
   );
 }
