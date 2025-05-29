@@ -5,7 +5,7 @@ import CartHeader from "../components/CartHeader";
 
 export default function CartPage() {
  const { cart, addToCart, removeFromCart, decrementFromCart } = useCart();
-console.log("Cart in CartPage:", cart); // ✅ place here
+
   const getTotal = () =>
     cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 console.log(cart,"CART")

@@ -7,7 +7,7 @@ import { useThemeStore } from "./themeStore";
 
 
 export const ThemeProvider = ({ children }) => {
-  const { theme } = useThemeStore
+  const { theme } = useThemeStore()
 
   useEffect(() => {
     if (typeof window !== "undefined") {
