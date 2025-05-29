@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏣 Whatbytes Shop - Frontend Assignment
 
-## Getting Started
+A product listing application built using **Next.js**, **React**, and **Tailwind CSS**, designed as part of the Whatbytes Frontend Developer assignment.
 
-First, run the development server:
+[![Watch the demo](https://img.youtube.com/vi/i-J6TBoIKjA/0.jpg)](https://youtu.be/i-J6TBoIKjA)
+
+## 🚀 Live Demo
+
+🔗 [View Deployed App](https://whatbytes-assignment-52i5.vercel.app) <!-- Replace with your Vercel/Netlify link -->
+
+---
+
+## 🧹 Features
+
+- 📦 Product listing from static JSON
+- 🔍 Live product search with rotating placeholder
+- 🛒 Cart functionality using **React Context API**
+  - Add, increment, decrement, remove products
+- 🧠 Category & price range filters
+- 🛍️ Product detail page with quantity selector
+- ✨ Responsive and clean UI using **Tailwind CSS**
+- 🔔 Toast notifications for user interactions (`sonner`)
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **State Management**: React Context + Zustand (for theme)
+- **Notifications**: [Sonner](https://sonner.emilkowal.ski/)
+- **Icons**: [Lucide React](https://lucide.dev)
+
+---
+
+## 📁 Folder Structure
+
+```bash
+src/
+├── app/
+│   ├── cart/               # Cart page
+│   ├── product/[id]/       # Product detail page
+│   ├── components/         # UI components like Header, Footer, etc.
+│   ├── context/            # CartContext
+│   ├── styles/             # Global styles
+│   └── data/products.json  # Static product data
+```
+
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/whatbytes-assignment.git
+cd whatbytes-assignment
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Run the app locally**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Visit the app**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deployed using [Vercel](https://vercel.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🙌 Acknowledgments
 
-## Deploy on Vercel
+Thanks to **Whatbytes** for the opportunity to showcase this project!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contact
+
+Created by **[Rahulkumar Pali]** – [palrahulkumar2002@gmail.com](mailto:palrahulkumar2002@gmail.com)
+
+---
